@@ -768,6 +768,127 @@ form button[type="submit"]:focus{
   color: #111;
 }
 
+/* Auth Modal */
+.auth-modal{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(5,8,22,0.72);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+  z-index: 120;
+}
+.auth-modal.is-open{
+  opacity: 1;
+  visibility: visible;
+}
+.auth-modal__overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(5,8,22,0.72);
+}
+.auth-modal__panel{
+  position: relative;
+  width: min(420px, 100%);
+  background: linear-gradient(160deg, rgba(16,22,38,0.95), rgba(8,12,24,0.92));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 1;
+}
+body.light .auth-modal__panel{
+  background: linear-gradient(160deg, rgba(255,255,255,0.98), rgba(238,242,255,0.95));
+  border-color: rgba(15,23,36,0.08);
+}
+.auth-modal__close{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.auth-modal__close:hover,
+.auth-modal__close:focus-visible{
+  color: var(--accent-2);
+}
+.auth-modal__header{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-modal__title{
+  margin: 0;
+  font-size: 1.6rem;
+}
+.auth-modal__subtitle{
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+.auth-modal__form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.auth-modal__form .form-group{
+  text-align: left;
+}
+.auth-modal__message{
+  min-height: 22px;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+.auth-modal__message.is-error{
+  color: var(--danger, #ff7b7b);
+}
+.auth-modal__message.is-success{
+  color: var(--accent-2);
+}
+.auth-modal__submit{
+  width: 100%;
+  justify-content: center;
+}
+.auth-modal__switch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+.auth-modal__switch-btn{
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color var(--transition);
+}
+.auth-modal__switch-btn:hover,
+.auth-modal__switch-btn:focus-visible{
+  color: var(--accent-2);
+}
+body.modal-open{
+  overflow: hidden;
+}
+
 /* Back to top button */
 #backToTop{
   position: fixed;
