@@ -42,6 +42,12 @@
                <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
                   🌙
                </button>
+               <button class="ghost-btn" id="loginTrigger">Log in</button>
+               <button class="ghost-btn ghost-btn--accent" id="signupTrigger">Sign up</button>
+               <button class="ghost-btn" id="logoutTrigger" hidden>Log out</button>
+               <button class="ghost-btn profile-btn" id="profileTrigger" hidden>
+                  Track Services
+               </button>
                <button class="cta-btn" onclick="location.href='contact.html'">
                   Hire Us
                </button>
@@ -259,39 +265,52 @@
             <h3>Contact</h3>
             <p class="muted">Email: contact@graphicode.com · WhatsApp: +8801XXXXXXXXX</p>
             <form id="contactForm" novalidate>
-               <div class="form-row">
+               <div class="form-group" style="margin-bottom:14px;">
+                  <label class="form-label" for="name">Your name</label>
                   <input
                      type="text"
                      name="name"
                      id="name"
-                     placeholder="Your name"
+                     class="form-field form-field--accent"
+                     placeholder="Jane Doe"
                      required
                      aria-required="true" />
+               </div>
+               <div class="form-group" style="margin-bottom:14px;">
+                  <label class="form-label" for="email">Email</label>
                   <input
                      type="email"
                      name="email"
                      id="email"
-                     placeholder="Email"
+                     class="form-field form-field--accent"
+                     placeholder="you@example.com"
                      required
                      aria-required="true" />
                </div>
-               <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Project brief"
-                  required
-                  aria-required="true"></textarea>
+               <div class="form-group" style="margin-bottom:14px;">
+                  <label class="form-label" for="message">Project brief</label>
+                  <textarea
+                     name="message"
+                     id="message"
+                     class="form-field form-field--area form-field--accent"
+                     placeholder="Tell us what you want to build..."
+                     required
+                     aria-required="true"></textarea>
+               </div>
                <div class="form-row captcha-row">
                   <!-- Simple demo captcha -->
-                  <label for="captchaInput">Enter 7 + 4 = ?</label>
-                  <input
-                     type="text"
-                     id="captchaInput"
-                     placeholder="Your answer"
-                     required
-                     aria-required="true" />
+                  <!-- <div class="form-group">
+                     <label class="form-label" for="captchaInput">Enter 7 + 4 = ?</label>
+                     <input
+                        type="text"
+                        id="captchaInput"
+                        class="form-field"
+                        placeholder="Your answer"
+                        required
+                        aria-required="true" />
+                  </div> -->
                </div>
-               <button type="submit" class="cta-btn">Send Message</button>
+               <button type="submit" class="cta-btn" style="margin-top:4px;">Send Message</button>
             </form>
             <div id="formMessage" role="alert" aria-live="polite"></div>
          </section>

@@ -83,13 +83,15 @@ filterButtons.forEach((btn) => {
    });
 });
 
-// Scroll Spy Navbar
+// Scroll Spy Navbar + subtle scroll shadow
 const navLinks = document.querySelectorAll(".nav-link");
-const sections = [...navLinks].map((link) =>
-   document.querySelector(link.getAttribute("href"))
-);
+const sections = [...navLinks]
+   .map((link) => document.querySelector(link.getAttribute("href")))
+   .filter(Boolean);
+
 window.addEventListener("scroll", () => {
-   let scrollY = window.pageYOffset;
+   const scrollY = window.pageYOffset;
+
    sections.forEach((section, i) => {
       if (
          section.offsetTop <= scrollY + 80 &&
@@ -102,10 +104,12 @@ window.addEventListener("scroll", () => {
 
    // Back to Top Button Show/Hide
    const backToTop = document.getElementById("backToTop");
-   if (scrollY > 400) {
-      backToTop.classList.add("show");
-   } else {
-      backToTop.classList.remove("show");
+   if (backToTop) {
+      if (scrollY > 400) {
+         backToTop.classList.add("show");
+      } else {
+         backToTop.classList.remove("show");
+      }
    }
 });
 

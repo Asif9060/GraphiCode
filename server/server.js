@@ -15,6 +15,8 @@ const blogRoutes = require("./routes/blog");
 const contactRoutes = require("./routes/contact");
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
+const userAuthRoutes = require("./routes/userAuth");
+const serviceOrdersRoutes = require("./routes/serviceOrders");
 
 const app = express();
 
@@ -49,6 +51,8 @@ app.use("/api/blog", blogRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/users", userAuthRoutes);
+app.use("/api/service-orders", serviceOrdersRoutes);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {

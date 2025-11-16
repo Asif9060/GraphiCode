@@ -38,6 +38,12 @@
                <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
                   🌙
                </button>
+               <button class="ghost-btn" id="loginTrigger">Log in</button>
+               <button class="ghost-btn ghost-btn--accent" id="signupTrigger">Sign up</button>
+               <button class="ghost-btn" id="logoutTrigger" hidden>Log out</button>
+               <button class="ghost-btn profile-btn" id="profileTrigger" hidden>
+                  Track Services
+               </button>
                <button class="cta-btn" onclick="location.href='contact.html'">
                   Hire Us
                </button>
@@ -66,78 +72,40 @@
                   align-items: start;
                ">
                <!-- Contact Form -->
-               <form style="display: flex; flex-direction: column; gap: 20px">
-                  <div>
-                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
-                        >Full Name</label
-                     >
+               <form style="display: flex; flex-direction: column; gap: 18px">
+                  <div class="form-group">
+                     <label class="form-label" for="fullName">Full Name</label>
                      <input
                         type="text"
+                        id="fullName"
+                        class="form-field"
                         placeholder="Your name"
-                        style="
-                           width: 100%;
-                           padding: 12px;
-                           background: var(--card);
-                           border: 1px solid var(--glass);
-                           border-radius: var(--radius);
-                           color: var(--text);
-                           font-family: 'Poppins', sans-serif;
-                        "
                         required />
                   </div>
 
-                  <div>
-                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
-                        >Email Address</label
-                     >
+                  <div class="form-group">
+                     <label class="form-label" for="contactEmail">Email Address</label>
                      <input
                         type="email"
-                        placeholder="your@email.com"
-                        style="
-                           width: 100%;
-                           padding: 12px;
-                           background: var(--card);
-                           border: 1px solid var(--glass);
-                           border-radius: var(--radius);
-                           color: var(--text);
-                           font-family: 'Poppins', sans-serif;
-                        "
+                        id="contactEmail"
+                        class="form-field"
+                        placeholder="you@email.com"
                         required />
                   </div>
 
-                  <div>
-                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
-                        >Phone Number</label
-                     >
+                  <div class="form-group">
+                     <label class="form-label" for="phone">Phone Number</label>
                      <input
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
-                        style="
-                           width: 100%;
-                           padding: 12px;
-                           background: var(--card);
-                           border: 1px solid var(--glass);
-                           border-radius: var(--radius);
-                           color: var(--text);
-                           font-family: 'Poppins', sans-serif;
-                        " />
+                        id="phone"
+                        class="form-field"
+                        placeholder="+1 (555) 000-0000" />
                   </div>
 
-                  <div>
-                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
-                        >Project Type</label
-                     >
-                     <select
-                        style="
-                           width: 100%;
-                           padding: 12px;
-                           background: var(--card);
-                           border: 1px solid var(--glass);
-                           border-radius: var(--radius);
-                           color: var(--text);
-                           font-family: 'Poppins', sans-serif;
-                        ">
-                        <option>Select a service</option>
+                  <div class="form-group">
+                     <label class="form-label" for="projectType">Project Type</label>
+                     <select id="projectType" class="form-field">
+                        <option value="">Select a service</option>
                         <option>Web Development</option>
                         <option>Branding & Design</option>
                         <option>App Development</option>
@@ -145,23 +113,12 @@
                      </select>
                   </div>
 
-                  <div>
-                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
-                        >Message</label
-                     >
+                  <div class="form-group">
+                     <label class="form-label" for="projectMessage">Message</label>
                      <textarea
-                        placeholder="Tell us about your project..."
-                        rows="5"
-                        style="
-                           width: 100%;
-                           padding: 12px;
-                           background: var(--card);
-                           border: 1px solid var(--glass);
-                           border-radius: var(--radius);
-                           color: var(--text);
-                           font-family: 'Poppins', sans-serif;
-                           resize: none;
-                        "></textarea>
+                        id="projectMessage"
+                        class="form-field form-field--area"
+                        placeholder="Tell us about your project..."></textarea>
                   </div>
 
                   <button type="submit" class="cta-btn" style="align-self: flex-start">
