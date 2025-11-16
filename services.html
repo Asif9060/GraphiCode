@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Services - GraphiCode</title>
+      <meta
+         name="description"
+         content="Explore GraphiCode's comprehensive digital services including web development, branding, and app development." />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="home.css" />
+      <style>
+         .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+         }
+
+         .service-card {
+            background: var(--card);
+            border: 1px solid var(--glass);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+         }
+
+         .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+         }
+
+         .service-icon {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 50%;
+            color: var(--card);
+         }
+
+         .service-content h3 {
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            color: var(--text);
+         }
+
+         .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+         }
+
+         .service-list li {
+            padding: 8px 0;
+            color: var(--text-alt);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+         }
+
+         .service-list li:before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+         }
+
+         .cta-gradient {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+            border-radius: var(--radius);
+            padding: 60px 30px;
+            text-align: center;
+            margin: 80px 0;
+         }
+
+         .cta-gradient h2 {
+            color: var(--card);
+            font-size: 2rem;
+            margin-bottom: 20px;
+         }
+
+         .cta-gradient .cta-btn {
+            background: var(--card);
+            color: var(--accent);
+            margin-top: 20px;
+         }
+
+         @media (max-width: 768px) {
+            .services-container {
+               grid-template-columns: 1fr;
+               gap: 20px;
+            }
+
+            .cta-gradient {
+               padding: 40px 20px;
+            }
+
+            .cta-gradient h2 {
+               font-size: 1.5rem;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <!-- Navbar -->
+         <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+            <button
+               aria-label="Toggle menu"
+               id="hamburger"
+               class="hamburger"
+               aria-expanded="false"
+               aria-controls="menu">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu" id="menu">
+               <a href="index.html" class="nav-link" tabindex="0">Home</a>
+               <a href="services.html" class="nav-link active" tabindex="0">Services</a>
+               <a href="portfolio.html" class="nav-link" tabindex="0">Portfolio</a>
+               <a href="about.html" class="nav-link" tabindex="0">About</a>
+               <a href="testimonials.html" class="nav-link" tabindex="0">Testimonials</a>
+               <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+               <a href="contact.html" class="nav-link" tabindex="0">Contact</a>
+            </div>
+            <div class="controls">
+               <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
+                  🌙
+               </button>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Hire Us
+               </button>
+            </div>
+         </nav>
+
+         <!-- Hero Section -->
+         <header class="hero" style="padding: 80px 0">
+            <div>
+               <h1 class="hero-title">Our Services</h1>
+               <p class="hero-lead muted">
+                  Comprehensive digital solutions designed to elevate your brand and
+                  business
+               </p>
+            </div>
+         </header>
+
+         <!-- Services Grid -->
+         <main>
+            <section class="services-container" aria-label="Our services">
+               <article class="service-card" tabindex="0">
+                  <div class="service-icon">W</div>
+                  <div class="service-content">
+                     <h3>Web Development</h3>
+                     <p class="muted">
+                        Build fast, responsive websites that convert visitors into
+                        customers. From landing pages to full-scale platforms.
+                     </p>
+                     <ul class="service-list">
+                        <li>Responsive Design</li>
+                        <li>SEO Optimized</li>
+                        <li>Fast Performance</li>
+                        <li>Mobile First</li>
+                        <li>CMS Integration</li>
+                     </ul>
+                  </div>
+               </article>
+
+               <article class="service-card" tabindex="0">
+                  <div class="service-icon">G</div>
+                  <div class="service-content">
+                     <h3>Branding & Design</h3>
+                     <p class="muted">
+                        Create a memorable brand identity that stands out. We design
+                        logos, visual systems, and print materials.
+                     </p>
+                     <ul class="service-list">
+                        <li>Logo Design</li>
+                        <li>Brand Guidelines</li>
+                        <li>Visual Identity</li>
+                        <li>Print Materials</li>
+                        <li>Brand Strategy</li>
+                     </ul>
+                  </div>
+               </article>
+
+               <article class="service-card" tabindex="0">
+                  <div class="service-icon">A</div>
+                  <div class="service-content">
+                     <h3>App Development</h3>
+                     <p class="muted">
+                        Native and cross-platform apps that engage users and drive
+                        business growth on all devices.
+                     </p>
+                     <ul class="service-list">
+                        <li>iOS & Android</li>
+                        <li>Progressive Web Apps</li>
+                        <li>Cross-Platform</li>
+                        <li>Real-time Apps</li>
+                        <li>App Maintenance</li>
+                     </ul>
+                  </div>
+               </article>
+            </section>
+
+            <!-- Why Choose Us Section -->
+            <section
+               style="
+                  margin: 100px 0;
+                  padding: 60px 0;
+                  border-top: 1px solid var(--glass);
+                  border-bottom: 1px solid var(--glass);
+               ">
+               <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 60px">
+                  Why Choose Us?
+               </h2>
+               <div
+                  style="
+                     display: grid;
+                     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                     gap: 40px;
+                  ">
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent);
+                           margin-bottom: 15px;
+                        ">
+                        ⚡
+                     </div>
+                     <h4 style="margin-bottom: 10px">Fast Delivery</h4>
+                     <p class="muted">
+                        We understand that time is money. Quick turnarounds without
+                        compromising quality.
+                     </p>
+                  </div>
+
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent-2);
+                           margin-bottom: 15px;
+                        ">
+                        🎨
+                     </div>
+                     <h4 style="margin-bottom: 10px">Creative Excellence</h4>
+                     <p class="muted">
+                        Our team brings innovation and creativity to every project we
+                        undertake.
+                     </p>
+                  </div>
+
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent);
+                           margin-bottom: 15px;
+                        ">
+                        💡
+                     </div>
+                     <h4 style="margin-bottom: 10px">Smart Solutions</h4>
+                     <p class="muted">
+                        We don't just build—we create solutions that solve real business
+                        problems.
+                     </p>
+                  </div>
+
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent-2);
+                           margin-bottom: 15px;
+                        ">
+                        🤝
+                     </div>
+                     <h4 style="margin-bottom: 10px">Client Focused</h4>
+                     <p class="muted">
+                        Your success is our success. We work closely with you throughout
+                        the project.
+                     </p>
+                  </div>
+
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent);
+                           margin-bottom: 15px;
+                        ">
+                        ✅
+                     </div>
+                     <h4 style="margin-bottom: 10px">Quality Assured</h4>
+                     <p class="muted">
+                        Rigorous testing and quality checks ensure your project meets the
+                        highest standards.
+                     </p>
+                  </div>
+
+                  <div style="text-align: center">
+                     <div
+                        style="
+                           font-size: 2.5rem;
+                           color: var(--accent-2);
+                           margin-bottom: 15px;
+                        ">
+                        🚀
+                     </div>
+                     <h4 style="margin-bottom: 10px">Future Ready</h4>
+                     <p class="muted">
+                        Built with scalability and longevity in mind. Your solutions grow
+                        with you.
+                     </p>
+                  </div>
+               </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-gradient">
+               <h2>Ready to start your project?</h2>
+               <p style="color: rgba(255, 255, 255, 0.9); margin: 10px 0 0 0">
+                  Let's discuss your ideas and turn them into reality
+               </p>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Get In Touch
+               </button>
+            </section>
+         </main>
+
+         <!-- Footer -->
+         <footer
+            aria-label="Site footer"
+            style="
+               margin-top: 80px;
+               padding: 40px 0;
+               border-top: 1px solid var(--glass);
+               text-align: center;
+            ">
+            <p style="margin: 0">© 2025 GraphiCode — Crafted with care</p>
+         </footer>
+      </div>
+
+      <script src="api.js"></script>
+      <script src="home.js"></script>
+      <script src="services.js"></script>
+   </body>
+</html>

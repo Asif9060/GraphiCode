@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Admin Dashboard - GraphiCode</title>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="admin.css" />
+   </head>
+   <body>
+      <div class="admin-container">
+         <!-- Sidebar -->
+         <aside class="sidebar">
+            <div class="brand">
+               <span class="dot"></span>
+               <span>GraphiCode Admin</span>
+            </div>
+            <nav class="admin-nav">
+               <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                  <span>📊</span> Dashboard
+               </a>
+               <a href="#portfolio" class="nav-item" data-section="portfolio">
+                  <span>🖼️</span> Portfolio
+               </a>
+               <a href="#services" class="nav-item" data-section="services">
+                  <span>⚙️</span> Services
+               </a>
+               <a href="#testimonials" class="nav-item" data-section="testimonials">
+                  <span>💬</span> Testimonials
+               </a>
+               <a href="#blog" class="nav-item" data-section="blog">
+                  <span>📝</span> Blog
+               </a>
+               <a href="#contacts" class="nav-item" data-section="contacts">
+                  <span>✉️</span> Contacts
+               </a>
+               <a href="#" class="nav-item" id="logoutBtn"> <span>🚪</span> Logout </a>
+            </nav>
+         </aside>
+
+         <!-- Main Content -->
+         <main class="main-content">
+            <header class="top-bar">
+               <h1 id="pageTitle">Dashboard</h1>
+               <div class="user-info">
+                  <span id="adminName">Admin</span>
+               </div>
+            </header>
+
+            <div class="content-area">
+               <!-- Dashboard Section -->
+               <section id="dashboard-section" class="content-section active">
+                  <div class="stats-grid">
+                     <div class="stat-card">
+                        <div class="stat-icon">🖼️</div>
+                        <div class="stat-info">
+                           <h3 id="portfolioCount">0</h3>
+                           <p>Portfolio Items</p>
+                        </div>
+                     </div>
+                     <div class="stat-card">
+                        <div class="stat-icon">⚙️</div>
+                        <div class="stat-info">
+                           <h3 id="servicesCount">0</h3>
+                           <p>Services</p>
+                        </div>
+                     </div>
+                     <div class="stat-card">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-info">
+                           <h3 id="testimonialsCount">0</h3>
+                           <p>Testimonials</p>
+                        </div>
+                     </div>
+                     <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                           <h3 id="blogsCount">0</h3>
+                           <p>Blog Posts</p>
+                        </div>
+                     </div>
+                     <div class="stat-card">
+                        <div class="stat-icon">✉️</div>
+                        <div class="stat-info">
+                           <h3 id="contactsNew">0</h3>
+                           <p>New Contacts</p>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- Portfolio Section -->
+               <section id="portfolio-section" class="content-section">
+                  <div class="section-header">
+                     <h2>Portfolio Management</h2>
+                     <button class="btn-primary" onclick="showAddPortfolioForm()">
+                        + Add New
+                     </button>
+                  </div>
+                  <div id="portfolioList" class="data-table"></div>
+               </section>
+
+               <!-- Services Section -->
+               <section id="services-section" class="content-section">
+                  <div class="section-header">
+                     <h2>Services Management</h2>
+                     <button class="btn-primary" onclick="showAddServiceForm()">
+                        + Add New
+                     </button>
+                  </div>
+                  <div id="servicesList" class="data-table"></div>
+               </section>
+
+               <!-- Testimonials Section -->
+               <section id="testimonials-section" class="content-section">
+                  <div class="section-header">
+                     <h2>Testimonials Management</h2>
+                     <button class="btn-primary" onclick="showAddTestimonialForm()">
+                        + Add New
+                     </button>
+                  </div>
+                  <div id="testimonialsList" class="data-table"></div>
+               </section>
+
+               <!-- Blog Section -->
+               <section id="blog-section" class="content-section">
+                  <div class="section-header">
+                     <h2>Blog Management</h2>
+                     <button class="btn-primary" onclick="showAddBlogForm()">
+                        + Add New
+                     </button>
+                  </div>
+                  <div id="blogList" class="data-table"></div>
+               </section>
+
+               <!-- Contacts Section -->
+               <section id="contacts-section" class="content-section">
+                  <div class="section-header">
+                     <h2>Contact Messages</h2>
+                  </div>
+                  <div id="contactsList" class="data-table"></div>
+               </section>
+            </div>
+         </main>
+      </div>
+
+      <!-- Modal for forms -->
+      <div id="modal" class="modal">
+         <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+         </div>
+      </div>
+
+      <script src="admin.js"></script>
+   </body>
+</html>

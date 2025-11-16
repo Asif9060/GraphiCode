@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Contact Us - GraphiCode</title>
+      <meta
+         name="description"
+         content="Get in touch with GraphiCode. Contact us for web design, app development, and branding services." />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="home.css" />
+   </head>
+   <body>
+      <div class="container">
+         <!-- Navbar -->
+         <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+            <button
+               aria-label="Toggle menu"
+               id="hamburger"
+               class="hamburger"
+               aria-expanded="false"
+               aria-controls="menu">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu" id="menu">
+               <a href="index.html" class="nav-link" tabindex="0">Home</a>
+               <a href="services.html" class="nav-link" tabindex="0">Services</a>
+               <a href="portfolio.html" class="nav-link" tabindex="0">Portfolio</a>
+               <a href="about.html" class="nav-link" tabindex="0">About</a>
+               <a href="testimonials.html" class="nav-link" tabindex="0">Testimonials</a>
+               <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+               <a href="contact.html" class="nav-link active" tabindex="0">Contact</a>
+            </div>
+            <div class="controls">
+               <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
+                  🌙
+               </button>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Hire Us
+               </button>
+            </div>
+         </nav>
+
+         <!-- Contact Header -->
+         <header class="hero" style="padding: 80px 0">
+            <div>
+               <h1 class="hero-title">Get In Touch</h1>
+               <p class="hero-lead muted">
+                  Have a project in mind? Let's talk about how we can help bring it to
+                  life
+               </p>
+            </div>
+         </header>
+
+         <main>
+            <!-- Contact Section -->
+            <section
+               style="
+                  margin: 60px 0;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 40px;
+                  align-items: start;
+               ">
+               <!-- Contact Form -->
+               <form style="display: flex; flex-direction: column; gap: 20px">
+                  <div>
+                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
+                        >Full Name</label
+                     >
+                     <input
+                        type="text"
+                        placeholder="Your name"
+                        style="
+                           width: 100%;
+                           padding: 12px;
+                           background: var(--card);
+                           border: 1px solid var(--glass);
+                           border-radius: var(--radius);
+                           color: var(--text);
+                           font-family: 'Poppins', sans-serif;
+                        "
+                        required />
+                  </div>
+
+                  <div>
+                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
+                        >Email Address</label
+                     >
+                     <input
+                        type="email"
+                        placeholder="your@email.com"
+                        style="
+                           width: 100%;
+                           padding: 12px;
+                           background: var(--card);
+                           border: 1px solid var(--glass);
+                           border-radius: var(--radius);
+                           color: var(--text);
+                           font-family: 'Poppins', sans-serif;
+                        "
+                        required />
+                  </div>
+
+                  <div>
+                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
+                        >Phone Number</label
+                     >
+                     <input
+                        type="tel"
+                        placeholder="+1 (555) 000-0000"
+                        style="
+                           width: 100%;
+                           padding: 12px;
+                           background: var(--card);
+                           border: 1px solid var(--glass);
+                           border-radius: var(--radius);
+                           color: var(--text);
+                           font-family: 'Poppins', sans-serif;
+                        " />
+                  </div>
+
+                  <div>
+                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
+                        >Project Type</label
+                     >
+                     <select
+                        style="
+                           width: 100%;
+                           padding: 12px;
+                           background: var(--card);
+                           border: 1px solid var(--glass);
+                           border-radius: var(--radius);
+                           color: var(--text);
+                           font-family: 'Poppins', sans-serif;
+                        ">
+                        <option>Select a service</option>
+                        <option>Web Development</option>
+                        <option>Branding & Design</option>
+                        <option>App Development</option>
+                        <option>Other</option>
+                     </select>
+                  </div>
+
+                  <div>
+                     <label style="display: block; margin-bottom: 8px; font-weight: 500"
+                        >Message</label
+                     >
+                     <textarea
+                        placeholder="Tell us about your project..."
+                        rows="5"
+                        style="
+                           width: 100%;
+                           padding: 12px;
+                           background: var(--card);
+                           border: 1px solid var(--glass);
+                           border-radius: var(--radius);
+                           color: var(--text);
+                           font-family: 'Poppins', sans-serif;
+                           resize: none;
+                        "></textarea>
+                  </div>
+
+                  <button type="submit" class="cta-btn" style="align-self: flex-start">
+                     Send Message
+                  </button>
+               </form>
+
+               <!-- Contact Info -->
+               <div>
+                  <h3 style="margin-bottom: 30px; font-size: 1.5rem">
+                     Contact Information
+                  </h3>
+
+                  <div style="margin-bottom: 30px">
+                     <h4 style="color: var(--accent); margin-bottom: 10px">📍 Address</h4>
+                     <p class="muted">
+                        123 Creative Street<br />Design City, DC 12345<br />United States
+                     </p>
+                  </div>
+
+                  <div style="margin-bottom: 30px">
+                     <h4 style="color: var(--accent); margin-bottom: 10px">📧 Email</h4>
+                     <p class="muted">
+                        <a
+                           href="mailto:hello@graphicode.com"
+                           style="color: var(--accent); text-decoration: none"
+                           >hello@graphicode.com</a
+                        >
+                     </p>
+                  </div>
+
+                  <div style="margin-bottom: 30px">
+                     <h4 style="color: var(--accent); margin-bottom: 10px">📱 Phone</h4>
+                     <p class="muted">
+                        <a
+                           href="tel:+15551234567"
+                           style="color: var(--accent); text-decoration: none"
+                           >+1 (555) 123-4567</a
+                        >
+                     </p>
+                  </div>
+
+                  <div style="margin-bottom: 30px">
+                     <h4 style="color: var(--accent); margin-bottom: 10px">
+                        🕒 Working Hours
+                     </h4>
+                     <p class="muted">
+                        Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 4:00
+                        PM<br />Sunday: Closed
+                     </p>
+                  </div>
+
+                  <div>
+                     <h4 style="color: var(--accent); margin-bottom: 15px">Follow Us</h4>
+                     <div style="display: flex; gap: 15px">
+                        <a
+                           href="#"
+                           style="
+                              display: inline-block;
+                              width: 40px;
+                              height: 40px;
+                              background: var(--card);
+                              border-radius: 50%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              color: var(--accent);
+                              text-decoration: none;
+                           "
+                           >f</a
+                        >
+                        <a
+                           href="#"
+                           style="
+                              display: inline-block;
+                              width: 40px;
+                              height: 40px;
+                              background: var(--card);
+                              border-radius: 50%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              color: var(--accent);
+                              text-decoration: none;
+                           "
+                           >𝕏</a
+                        >
+                        <a
+                           href="#"
+                           style="
+                              display: inline-block;
+                              width: 40px;
+                              height: 40px;
+                              background: var(--card);
+                              border-radius: 50%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              color: var(--accent);
+                              text-decoration: none;
+                           "
+                           >in</a
+                        >
+                        <a
+                           href="#"
+                           style="
+                              display: inline-block;
+                              width: 40px;
+                              height: 40px;
+                              background: var(--card);
+                              border-radius: 50%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              color: var(--accent);
+                              text-decoration: none;
+                           "
+                           >📷</a
+                        >
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+
+         <!-- Footer -->
+         <footer
+            aria-label="Site footer"
+            style="
+               margin-top: 80px;
+               padding: 40px 0;
+               border-top: 1px solid var(--glass);
+               text-align: center;
+            ">
+            <p style="margin: 0">© 2025 GraphiCode — Crafted with care</p>
+         </footer>
+      </div>
+
+      <script src="api.js"></script>
+      <script src="home.js"></script>
+   </body>
+</html>

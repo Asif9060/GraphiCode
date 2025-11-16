@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>About Us - GraphiCode</title>
+      <meta
+         name="description"
+         content="Learn about GraphiCode, our mission, values, and the talented team behind our creative digital solutions." />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="home.css" />
+      <style>
+         .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 80px 0;
+         }
+         .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+         }
+         .about-text p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+            color: var(--text-alt);
+            font-size: 1.05rem;
+         }
+         .mission-box {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+            padding: 40px;
+            border-radius: var(--radius);
+            color: var(--card);
+         }
+         .mission-box h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+         }
+         .mission-box p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            font-weight: 500;
+         }
+         .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+         }
+         .stat-card {
+            background: var(--card);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--glass);
+            transition: all 0.3s ease;
+         }
+         .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+         }
+         .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+         }
+         .value-card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+         }
+         .value-card:nth-child(2) {
+            border-left-color: var(--accent-2);
+         }
+         .value-card:nth-child(3) {
+            border-left-color: var(--accent);
+         }
+         .value-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+         }
+         @media (max-width: 768px) {
+            .about-content {
+               grid-template-columns: 1fr;
+               gap: 40px;
+            }
+            .about-text h2 {
+               font-size: 1.8rem;
+            }
+            .stats-grid {
+               grid-template-columns: repeat(2, 1fr);
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <!-- Navbar -->
+         <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+            <button
+               aria-label="Toggle menu"
+               id="hamburger"
+               class="hamburger"
+               aria-expanded="false"
+               aria-controls="menu">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu" id="menu">
+               <a href="index.html" class="nav-link" tabindex="0">Home</a>
+               <a href="services.html" class="nav-link" tabindex="0">Services</a>
+               <a href="portfolio.html" class="nav-link" tabindex="0">Portfolio</a>
+               <a href="about.html" class="nav-link active" tabindex="0">About</a>
+               <a href="testimonials.html" class="nav-link" tabindex="0">Testimonials</a>
+               <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+               <a href="contact.html" class="nav-link" tabindex="0">Contact</a>
+            </div>
+            <div class="controls">
+               <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
+                  🌙
+               </button>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Hire Us
+               </button>
+            </div>
+         </nav>
+
+         <!-- About Header -->
+         <header class="hero" style="padding: 80px 0">
+            <div>
+               <h1 class="hero-title">About GraphiCode</h1>
+               <p class="hero-lead muted">
+                  We're a passionate team of designers and developers dedicated to
+                  creating beautiful digital experiences
+               </p>
+            </div>
+         </header>
+
+         <main>
+            <!-- About Content -->
+            <section class="about-content">
+               <div class="about-text">
+                  <h2>Who We Are</h2>
+                  <p>
+                     GraphiCode is a creative digital agency founded with a mission to
+                     transform businesses through innovative digital solutions. We believe
+                     that great design combined with solid development creates powerful
+                     experiences that drive real results.
+                  </p>
+                  <p>
+                     Our team consists of experienced designers, developers, and
+                     strategists who are passionate about what they do. We work
+                     collaboratively with our clients to understand their unique
+                     challenges and deliver tailor-made solutions.
+                  </p>
+                  <p>
+                     With a portfolio spanning across web development, branding, and app
+                     development, we've successfully helped dozens of businesses achieve
+                     their digital goals and establish strong online presence.
+                  </p>
+               </div>
+
+               <div class="mission-box">
+                  <h3>Our Mission</h3>
+                  <p>
+                     To empower businesses with innovative digital solutions that drive
+                     growth, enhance user engagement, and create lasting impact in the
+                     digital landscape.
+                  </p>
+               </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section>
+               <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px">
+                  By The Numbers
+               </h2>
+               <div class="stats-grid">
+                  <div class="stat-card">
+                     <div class="stat-number">50+</div>
+                     <div class="stat-label">Projects Completed</div>
+                  </div>
+                  <div class="stat-card">
+                     <div class="stat-number">35+</div>
+                     <div class="stat-label">Happy Clients</div>
+                  </div>
+                  <div class="stat-card">
+                     <div class="stat-number">8+</div>
+                     <div class="stat-label">Years Experience</div>
+                  </div>
+                  <div class="stat-card">
+                     <div class="stat-number">15+</div>
+                     <div class="stat-label">Team Members</div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- Core Values Section -->
+            <section>
+               <h2 style="text-align: center; font-size: 2rem; margin-bottom: 60px">
+                  Our Core Values
+               </h2>
+               <div
+                  style="
+                     display: grid;
+                     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                     gap: 30px;
+                  ">
+                  <div class="value-card">
+                     <div style="font-size: 2rem; margin-bottom: 15px">🚀</div>
+                     <h4>Innovation</h4>
+                     <p>
+                        We constantly push boundaries and stay ahead of technology trends
+                        to deliver cutting-edge solutions that set our clients apart in
+                        the competitive market.
+                     </p>
+                  </div>
+
+                  <div class="value-card">
+                     <div style="font-size: 2rem; margin-bottom: 15px">🤝</div>
+                     <h4>Collaboration</h4>
+                     <p>
+                        We believe in working closely with our clients, understanding
+                        their vision, and turning their ideas into reality through
+                        seamless partnership and communication.
+                     </p>
+                  </div>
+
+                  <div class="value-card">
+                     <div style="font-size: 2rem; margin-bottom: 15px">✨</div>
+                     <h4>Excellence</h4>
+                     <p>
+                        Quality is never compromised. We maintain the highest standards in
+                        every project, from concept to delivery, ensuring exceptional
+                        results every time.
+                     </p>
+                  </div>
+               </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section
+               style="
+                  background: linear-gradient(
+                     135deg,
+                     var(--accent) 0%,
+                     var(--accent-2) 100%
+                  );
+                  border-radius: var(--radius);
+                  padding: 60px 30px;
+                  text-align: center;
+                  margin: 80px 0;
+               ">
+               <h2 style="color: var(--card); margin-bottom: 15px">
+                  Let's Build Something Amazing Together
+               </h2>
+               <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px">
+                  Get in touch with us today and let's discuss your next project
+               </p>
+               <button
+                  class="cta-btn"
+                  onclick="location.href='contact.html'"
+                  style="background: var(--card); color: var(--accent)">
+                  Start Conversation
+               </button>
+            </section>
+         </main>
+
+         <!-- Footer -->
+         <footer
+            aria-label="Site footer"
+            style="
+               margin-top: 80px;
+               padding: 40px 0;
+               border-top: 1px solid var(--glass);
+               text-align: center;
+            ">
+            <p style="margin: 0">© 2025 GraphiCode — Crafted with care</p>
+         </footer>
+      </div>
+
+      <script src="api.js"></script>
+      <script src="home.js"></script>
+   </body>
+</html>

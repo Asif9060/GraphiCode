@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portfolio - GraphiCode</title>
+      <meta
+         name="description"
+         content="View our latest portfolio projects and case studies showcasing our work in web development, branding, and app development." />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="home.css" />
+      <style>
+         .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 50px 0 60px 0;
+         }
+         .filter-btn {
+            padding: 10px 25px;
+            background: var(--card);
+            border: 2px solid var(--glass);
+            color: var(--text-alt);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: "Poppins", sans-serif;
+         }
+         .filter-btn:hover,
+         .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(193, 61, 197, 0.1);
+         }
+         .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+         }
+         .portfolio-item {
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+         }
+         .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+         }
+         .portfolio-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+         }
+         .portfolio-item:hover img {
+            transform: scale(1.05);
+         }
+         .portfolio-meta {
+            padding: 25px;
+         }
+         .portfolio-meta h4 {
+            margin: 0 0 8px 0;
+            color: var(--text);
+            font-size: 1.1rem;
+         }
+         .portfolio-meta p {
+            margin: 0;
+            color: var(--accent-2);
+            font-size: 0.9rem;
+            font-weight: 500;
+         }
+         @media (max-width: 768px) {
+            .portfolio-grid {
+               grid-template-columns: 1fr;
+            }
+            .portfolio-filters {
+               gap: 10px;
+            }
+            .filter-btn {
+               padding: 8px 16px;
+               font-size: 0.9rem;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <!-- Navbar -->
+         <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+            <button
+               aria-label="Toggle menu"
+               id="hamburger"
+               class="hamburger"
+               aria-expanded="false"
+               aria-controls="menu">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu" id="menu">
+               <a href="index.html" class="nav-link" tabindex="0">Home</a>
+               <a href="services.html" class="nav-link" tabindex="0">Services</a>
+               <a href="portfolio.html" class="nav-link active" tabindex="0">Portfolio</a>
+               <a href="about.html" class="nav-link" tabindex="0">About</a>
+               <a href="testimonials.html" class="nav-link" tabindex="0">Testimonials</a>
+               <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+               <a href="contact.html" class="nav-link" tabindex="0">Contact</a>
+            </div>
+            <div class="controls">
+               <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
+                  🌙
+               </button>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Hire Us
+               </button>
+            </div>
+         </nav>
+
+         <!-- Portfolio Header -->
+         <header class="hero" style="padding: 80px 0">
+            <div>
+               <h1 class="hero-title">Our Portfolio</h1>
+               <p class="hero-lead muted">
+                  Explore our latest projects and see how we transform ideas into stunning
+                  digital experiences
+               </p>
+            </div>
+         </header>
+
+         <main>
+            <!-- Filter Buttons -->
+            <div
+               class="portfolio-filters"
+               role="list"
+               aria-label="Filter portfolio projects">
+               <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                  All Projects
+               </button>
+               <button class="filter-btn" data-filter="web" aria-pressed="false">
+                  Websites
+               </button>
+               <button class="filter-btn" data-filter="branding" aria-pressed="false">
+                  Branding
+               </button>
+               <button class="filter-btn" data-filter="apps" aria-pressed="false">
+                  Apps
+               </button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <section class="portfolio-grid" aria-label="Portfolio projects">
+               <div class="portfolio-item" data-category="web" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop"
+                     alt="Startup Site"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>Startup Site</h4>
+                     <p>E-commerce Landing Page</p>
+                  </div>
+               </div>
+
+               <div class="portfolio-item" data-category="branding" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=500&auto=format&fit=crop"
+                     alt="Brand Identity"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>Brand Identity</h4>
+                     <p>Logo & Visual System</p>
+                  </div>
+               </div>
+
+               <div class="portfolio-item" data-category="apps" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=500&auto=format&fit=crop"
+                     alt="Mobile App"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>Mobile App</h4>
+                     <p>iOS & Android Development</p>
+                  </div>
+               </div>
+
+               <div class="portfolio-item" data-category="web" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1460925895917-adf4e565db1d?q=80&w=500&auto=format&fit=crop"
+                     alt="Corporate Website"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>Corporate Website</h4>
+                     <p>CMS Platform</p>
+                  </div>
+               </div>
+
+               <div class="portfolio-item" data-category="branding" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?q=80&w=500&auto=format&fit=crop"
+                     alt="Print Collateral"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>Print Collateral</h4>
+                     <p>Marketing Materials</p>
+                  </div>
+               </div>
+
+               <div class="portfolio-item" data-category="apps" tabindex="0">
+                  <img
+                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop"
+                     alt="SaaS Platform"
+                     loading="lazy" />
+                  <div class="portfolio-meta">
+                     <h4>SaaS Platform</h4>
+                     <p>Web Application</p>
+                  </div>
+               </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section
+               style="
+                  background: linear-gradient(
+                     135deg,
+                     var(--accent) 0%,
+                     var(--accent-2) 100%
+                  );
+                  border-radius: var(--radius);
+                  padding: 60px 30px;
+                  text-align: center;
+                  margin: 80px 0;
+               ">
+               <h2 style="color: var(--card); margin-bottom: 20px; font-size: 2rem">
+                  Interested in working with us?
+               </h2>
+               <button
+                  class="cta-btn"
+                  onclick="location.href='contact.html'"
+                  style="background: var(--card); color: var(--accent)">
+                  Start Your Project
+               </button>
+            </section>
+         </main>
+
+         <!-- Footer -->
+         <footer
+            aria-label="Site footer"
+            style="
+               margin-top: 80px;
+               padding: 40px 0;
+               border-top: 1px solid var(--glass);
+               text-align: center;
+            ">
+            <p style="margin: 0">© 2025 GraphiCode — Crafted with care</p>
+         </footer>
+      </div>
+
+      <script src="api.js"></script>
+      <script src="home.js"></script>
+      <script src="portfolio.js"></script>
+   </body>
+</html>

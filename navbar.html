@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navbar - GraphiCode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+      <button aria-label="Toggle menu" id="hamburger" class="hamburger" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="menu" id="menu">
+        <a href="index.html" class="nav-link" tabindex="0">Home</a>
+        <a href="services.html" class="nav-link" tabindex="0">Services</a>
+        <a href="portfolio.html" class="nav-link" tabindex="0">Portfolio</a>
+        <a href="about.html" class="nav-link" tabindex="0">About</a>
+        <a href="testimonials.html" class="nav-link" tabindex="0">Testimonials</a>
+        <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+        <a href="contact.html" class="nav-link" tabindex="0">Contact</a>
+      </div>
+      <div class="controls">
+        <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="cta-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Hire Us</button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="navbar-content" style="padding: 40px 0; text-align: center; min-height: 60vh;">
+      <h1>Navigation Bar Component</h1>
+      <p class="muted" style="margin-bottom: 20px;">This is a standalone navbar component</p>
+      <p style="color: var(--text-alt);">Navigate to <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">main page</a> to view the full site</p>
+    </main>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>

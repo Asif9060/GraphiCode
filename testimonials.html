@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Testimonials - GraphiCode</title>
+      <meta
+         name="description"
+         content="Read what our satisfied clients say about working with GraphiCode for their digital projects." />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="home.css" />
+      <style>
+         .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+         }
+         .testimonial-card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--glass);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+         }
+         .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent);
+         }
+         .star-rating {
+            display: flex;
+            gap: 5px;
+            font-size: 1.3rem;
+         }
+         .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: var(--text);
+            margin: 0;
+         }
+         .testimonial-author {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass);
+         }
+         .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--card);
+            font-weight: 700;
+            font-size: 1.2rem;
+         }
+         .author-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+         }
+         .author-name {
+            font-weight: 600;
+            color: var(--text);
+         }
+         .author-title {
+            font-size: 0.85rem;
+            color: var(--accent);
+         }
+         @media (max-width: 768px) {
+            .testimonials-grid {
+               grid-template-columns: 1fr;
+               gap: 20px;
+            }
+            .testimonial-card {
+               padding: 30px;
+            }
+            .testimonial-text {
+               font-size: 1rem;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <!-- Navbar -->
+         <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="brand" tabindex="0"><span class="dot"></span> GraphiCode</div>
+            <button
+               aria-label="Toggle menu"
+               id="hamburger"
+               class="hamburger"
+               aria-expanded="false"
+               aria-controls="menu">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu" id="menu">
+               <a href="index.html" class="nav-link" tabindex="0">Home</a>
+               <a href="services.html" class="nav-link" tabindex="0">Services</a>
+               <a href="portfolio.html" class="nav-link" tabindex="0">Portfolio</a>
+               <a href="about.html" class="nav-link" tabindex="0">About</a>
+               <a href="testimonials.html" class="nav-link active" tabindex="0"
+                  >Testimonials</a
+               >
+               <a href="blog.html" class="nav-link" tabindex="0">Blog</a>
+               <a href="contact.html" class="nav-link" tabindex="0">Contact</a>
+            </div>
+            <div class="controls">
+               <button class="theme-btn kbd" id="themeToggle" aria-label="Toggle theme">
+                  🌙
+               </button>
+               <button class="cta-btn" onclick="location.href='contact.html'">
+                  Hire Us
+               </button>
+            </div>
+         </nav>
+
+         <!-- Hero Section -->
+         <header class="hero" style="padding: 80px 0">
+            <div>
+               <h1 class="hero-title">Client Testimonials</h1>
+               <p class="hero-lead muted">
+                  Hear from businesses we've helped succeed with our digital solutions
+               </p>
+            </div>
+         </header>
+
+         <main>
+            <!-- Testimonials Grid -->
+            <section class="testimonials-grid" aria-label="Client testimonials">
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "GraphiCode completely transformed our online presence. Their
+                     attention to detail and creative approach resulted in a website that
+                     exceeded our expectations."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">S</div>
+                     <div class="author-info">
+                        <div class="author-name">Sarah Johnson</div>
+                        <div class="author-title">CEO, BrightTech</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "Working with GraphiCode was a pleasure. They delivered our project
+                     on time and were incredibly responsive to our feedback throughout the
+                     entire process."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">M</div>
+                     <div class="author-info">
+                        <div class="author-name">Michael Chen</div>
+                        <div class="author-title">Product Manager, TechVision</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "Our mobile app is now a key part of our business. GraphiCode's team
+                     understood our vision perfectly and created something truly
+                     remarkable."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">E</div>
+                     <div class="author-info">
+                        <div class="author-name">Emma Davis</div>
+                        <div class="author-title">Founder, NextGen Apps</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "The branding work GraphiCode did for us is stunning. It perfectly
+                     captures our company's essence and has helped us stand out in a
+                     crowded market."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">J</div>
+                     <div class="author-info">
+                        <div class="author-name">James Wilson</div>
+                        <div class="author-title">CEO, StyleWorks</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "From initial consultation to final delivery, GraphiCode was
+                     professional and efficient. Our conversion rates have increased
+                     significantly since launch."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">L</div>
+                     <div class="author-info">
+                        <div class="author-name">Lisa Anderson</div>
+                        <div class="author-title">Marketing Director, eShop Pro</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="testimonial-card" tabindex="0">
+                  <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                  <p class="testimonial-text">
+                     "Best decision we made was hiring GraphiCode. Their expertise and
+                     creativity have been invaluable to our growth. Highly recommend them
+                     to anyone."
+                  </p>
+                  <div class="testimonial-author">
+                     <div class="author-avatar">R</div>
+                     <div class="author-info">
+                        <div class="author-name">Robert Martinez</div>
+                        <div class="author-title">Founder, Creative Studio</div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section
+               style="
+                  background: linear-gradient(
+                     135deg,
+                     var(--accent) 0%,
+                     var(--accent-2) 100%
+                  );
+                  border-radius: var(--radius);
+                  padding: 60px 30px;
+                  text-align: center;
+                  margin: 80px 0;
+               ">
+               <h2 style="color: var(--card); margin-bottom: 15px">
+                  Join Our Happy Clients
+               </h2>
+               <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px">
+                  Let's create something amazing together
+               </p>
+               <button
+                  class="cta-btn"
+                  onclick="location.href='contact.html'"
+                  style="background: var(--card); color: var(--accent)">
+                  Get Started Today
+               </button>
+            </section>
+         </main>
+
+         <!-- Footer -->
+         <footer
+            aria-label="Site footer"
+            style="
+               margin-top: 80px;
+               padding: 40px 0;
+               border-top: 1px solid var(--glass);
+               text-align: center;
+            ">
+            <p style="margin: 0">© 2025 GraphiCode — Crafted with care</p>
+         </footer>
+      </div>
+
+      <script src="api.js"></script>
+      <script src="home.js"></script>
+      <script src="testimonials.js"></script>
+   </body>
+</html>
