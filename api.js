@@ -1,6 +1,5 @@
 // API Configuration
 const API_BASE_URL = 'https://graphicode.onrender.com/api';
-const USER_SESSION_STORAGE_KEY = "graphicode_user_session";
 
 // API Helper Class
 class GraphiCodeAPI {
@@ -8,52 +7,25 @@ class GraphiCodeAPI {
       this.baseURL = baseURL;
    }
 
-   getStoredToken() {
-      if (typeof window === "undefined") return null;
-      try {
-         const raw = window.localStorage.getItem(USER_SESSION_STORAGE_KEY);
-         if (!raw) return null;
-         const parsed = JSON.parse(raw);
-         return parsed && typeof parsed === "object" ? parsed.token || null : null;
-      } catch (error) {
-         console.warn("Unable to read stored session token", error);
-         return null;
-      }
-   }
-
    async request(endpoint, options = {}) {
       const url = `${this.baseURL}${endpoint}`;
-      const config = { method: options.method || "GET", ...options };
-      config.headers = {
-         "Content-Type": "application/json",
-         ...(options.headers || {}),
+      const config = {
+         headers: {
+            "Content-Type": "application/json",
+            ...(options.headers || {}),
+         },
+         ...options,
       };
-
-      if (config.body && typeof config.body !== "string") {
-         config.body = JSON.stringify(config.body);
-      }
-
-      const token = this.getStoredToken();
-      if (token && !config.headers.Authorization) {
-         config.headers.Authorization = `Bearer ${token}`;
-      }
 
       try {
          const response = await fetch(url, config);
-         const contentType = response.headers.get("content-type") || "";
-         const isJSON = contentType.includes("application/json");
-         const data = isJSON ? await response.json() : null;
+         const data = await response.json();
 
          if (!response.ok) {
-            const error = new Error(
-               (data && (data.message || data.error)) || "API request failed"
-            );
-            error.status = response.status;
-            error.data = data;
-            throw error;
+            throw new Error(data.message || "API request failed");
          }
 
-         return data ?? {};
+         return data;
       } catch (error) {
          console.error("API Error:", error);
          throw error;
@@ -120,41 +92,6 @@ class GraphiCodeAPI {
          method: "POST",
          body: JSON.stringify(contactData),
       });
-   }
-
-   // User Authentication
-   async registerUser(userData) {
-      return this.request("/users/register", {
-         method: "POST",
-         body: userData,
-      });
-   }
-
-   async loginUser(credentials) {
-      return this.request("/users/login", {
-         method: "POST",
-         body: credentials,
-      });
-   }
-
-   async getCurrentUser() {
-      return this.request("/users/me");
-   }
-
-   // Service Orders
-   async createServiceOrder(orderData) {
-      return this.request("/service-orders", {
-         method: "POST",
-         body: orderData,
-      });
-   }
-
-   async getMyServiceOrders() {
-      return this.request("/service-orders");
-   }
-
-   async getServiceOrderById(id) {
-      return this.request(`/service-orders/${id}`);
    }
 }
 
